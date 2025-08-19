@@ -1,0 +1,113 @@
+.navbar {
+  position: fixed;
+  left: 0%;
+  top: auto;
+  right: 0%;
+  bottom: 40px;
+  z-index: 1;
+
+  width: 700px;
+  margin-right: auto;
+  margin-left: auto;
+
+  border-radius: 14px;
+
+  background-color: hsla(0, 0.00%, 0.00%, 0.05);
+
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.2);
+}
+
+.navbar:where(.w-variant-a95b0928-cf0a-fe57-9d27-cde3339b555d) {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.navbar-container {
+  display: flex;
+  padding: 16px 24px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.navbar-home_button {
+  padding: 0px;
+  background-color: transparent;
+  font-family: 'Necto Mono';
+  color: var(--black);
+  font-size: 1rem;
+}
+
+.navbar-home_button:where(.w-variant-a95b0928-cf0a-fe57-9d27-cde3339b555d) {
+  color: var(--beige);
+}
+
+.navbar-menu {
+  display: flex;
+  margin-left: auto;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+}
+
+.button {
+  padding: 0.5rem 1rem 0.4rem;
+
+  border: 1px dashed var(--black);
+  border-radius: 100rem;
+
+  transition: border-color 200ms ease;
+
+  font-family: 'Necto Mono';
+  color: var(--black);
+  font-size: 0.8rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+}
+
+.button:where(.w-variant-a95b0928-cf0a-fe57-9d27-cde3339b555d) {
+  border-color: var(--beige);
+  color: var(--beige);
+}
+
+.button:hover {
+  border-color: hsla(0, 0.00%, 0.00%, 0.50);
+}
+
+.button:hover:where(.w-variant-a95b0928-cf0a-fe57-9d27-cde3339b555d) {
+  border-color: hsla(42.857142857142684, 15.56%, 91.18%, 0.80);
+}
+
+.button:global(.w--current):where(.w-variant-a95b0928-cf0a-fe57-9d27-cde3339b555d) {
+  color: var(--beige);
+}
+
+.button.is-small {
+  padding: 0.5rem 1.35rem 0.5rem 1.25rem;
+}
+
+.button.is-large {
+  padding: 1rem 2rem;
+}
+
+.button.is-secondary {
+  background-color: transparent;
+  color: #1d2130;
+}
+
+.button.is-text {
+  border-color: transparent;
+  background-color: transparent;
+  color: #1d2130;
+}
+
+.button.is-icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+
+  text-decoration: none;
+}
