@@ -2,7 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   basePath: "/app",
-  assetPrefix: "https://prashantdasari.webflow.io/app",
+  assetPrefix: process.env.NODE_ENV === 'production' 
+    ? "https://prashantdasari.webflow.io/app"  // Production
+    : "/app",  // Staging/Development (uses current domain)
 };
 
 export default nextConfig;
