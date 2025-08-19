@@ -1,0 +1,111 @@
+"use client";
+
+import { Section, Block, Link } from "@/devlink/_Builtin";
+
+interface CollectionItemProps {
+  params: {
+    slug: string;
+  };
+}
+
+export default function CollectionItemPage({ params }: CollectionItemProps) {
+  const { slug } = params;
+
+  return (
+    <Section
+      tag="section"
+      style={{
+        minHeight: "100vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <Block tag="div" className="container">
+        <Block
+          tag="div"
+          className="collection-item"
+          style={{
+            textAlign: "center",
+            maxWidth: "800px",
+            margin: "0 auto",
+          }}
+        >
+          <h1
+            className="margin-bottom-24px"
+            style={{
+              fontSize: "2.5rem",
+              fontWeight: 700,
+              background: "linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}
+          >
+            Collection Item: {slug}
+          </h1>
+          
+          <Block tag="p" className="margin-bottom-24px">
+            This demonstrates nested dynamic routing:
+            <br />
+            <code style={{ 
+              background: "#f5f5f5", 
+              padding: "4px 8px", 
+              borderRadius: "4px",
+              fontSize: "0.9rem"
+            }}>
+              website.com/collection/{slug}
+            </code>
+          </Block>
+
+          <Block tag="p" className="margin-bottom-24px">
+            Perfect for:
+            <br />
+            • Blog posts: /blog/post-title
+            <br />
+            • Products: /products/product-name
+            <br />
+            • Services: /services/service-name
+          </Block>
+
+          <div style={{ marginTop: "24px" }}>
+            <Link
+              button={true}
+              options={{
+                href: "/",
+              }}
+              className="button-primary"
+              style={{
+                borderRadius: "4px",
+                background: "#146ef5",
+                color: "#ffffff",
+                boxShadow:
+                  "0px 0.5px 1px rgba(0, 0, 0, 0.25), inset 0px 29px 23px -16px rgba(255, 255, 255, 0.04), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.2)",
+                marginRight: "12px",
+              }}
+            >
+              Back to Home
+            </Link>
+            
+            <Link
+              button={true}
+              options={{
+                href: "/collection/another-example",
+              }}
+              className="button-secondary"
+              style={{
+                borderRadius: "4px",
+                background: "transparent",
+                color: "#146ef5",
+                border: "2px solid #146ef5",
+                padding: "8px 16px",
+              }}
+            >
+              Test Another Collection Item
+            </Link>
+          </div>
+        </Block>
+      </Block>
+    </Section>
+  );
+}
