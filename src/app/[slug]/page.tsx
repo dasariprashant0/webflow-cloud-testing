@@ -1,15 +1,10 @@
 "use client";
 
+import { use } from "react";
 import { Section, Block, Link } from "@/devlink/_Builtin";
 
-interface PageProps {
-  params: {
-    slug: string;
-  };
-}
-
-export default function DynamicPage({ params }: PageProps) {
-  const { slug } = params;
+export default function DynamicPage({ params }: { params: Promise<any> }) {
+  const { slug } = use(params);
 
   return (
     <Section

@@ -1,15 +1,10 @@
 "use client";
 
+import { use } from "react";
 import { Section, Block, Link } from "@/devlink/_Builtin";
 
-interface CollectionItemProps {
-  params: {
-    slug: string;
-  };
-}
-
-export default function CollectionItemPage({ params }: CollectionItemProps) {
-  const { slug } = params;
+export default function CollectionItemPage({ params }: { params: Promise<any> }) {
+  const { slug } = use(params);
 
   return (
     <Section

@@ -1,9 +1,16 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Temporarily removed basePath and assetPrefix to test dynamic routing
-  // basePath: "/app",
-  // assetPrefix: "/app",
+  basePath: "/app",
+  assetPrefix: "/app",  // Staging/Development (uses current domain)
+  async rewrites() {
+    return [
+      {
+        source: "/:slug*",
+        destination: "/app/:slug*",
+      },
+    ];
+  },
 };
 
 export default nextConfig;
